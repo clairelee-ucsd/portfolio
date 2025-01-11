@@ -6,8 +6,6 @@
     <title>Contact</title>
 </head>
 <body>
-    <h1>Contact</h1>
-
     <nav>
         <ul>
           <li><a href="https://clairelee-ucsd.github.io/portfolio/index.html">Home</a></li>
@@ -15,7 +13,25 @@
           <li><a href="https://clairelee-ucsd.github.io/portfolio/contact/index.html">Contact</a></li>
           <li><a href="https://github.com/clairelee-ucsd" target="_blank">GitHub profile</a></li>
         </ul>
-      </nav>
+    </nav>
+
+    
+    <h1>Contact</h1>
+
+    <form action="mailto:cll016@ucsd.edu" method="post" enctype="text/plain">
+        <label>Email: </label>
+        <input name="email" type="email"/>
+        
+        <label>Subject: </label>
+        <input name="subject" />
+
+        <label>Body: </label>
+        <textarea name="body"></textarea>
+
+        <button>Submit</button>
+    </form>
+
+
     
 </body>
 </html>
