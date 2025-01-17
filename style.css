@@ -90,6 +90,33 @@ body {
       }
     }
 
+    header.resume{
+      border-bottom: 2px solid oklch(0% 0% 358);
+      a{
+        text-decoration: none;
+      }
+    }
+
+    article{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+      ul{
+        font: inherit;
+        display: grid;
+        grid-template-columns: subgrid;
+      }
+    }
+
+    header.resume h2,
+    #education h2, 
+    #work_experience h2, 
+    #leadership_experience h2, 
+    #skills h2{
+      font-size: 200%;
+      color: oklch(53% 0.1 236);
+    }
+
 
 
   }
