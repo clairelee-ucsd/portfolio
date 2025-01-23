@@ -4,6 +4,8 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
+const BASE__URL = 'https://clairelee-ucsd.github.io/portfolio/';
+
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
@@ -22,7 +24,7 @@ for (let p of pages) {
     let title = p.title;
 
     if (!ARE_WE_HOME && !url.startsWith('http')) {
-        url = '../' + url;
+        url = BASE__URL + '../' + url;
       }
 
     nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
