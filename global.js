@@ -56,3 +56,7 @@ for (let p of pages) {
           </select>
       </label>`
   );
+
+  select.addEventListener('input', function (event) {
+    console.log('color scheme changed to', event.target.value);
+  });
