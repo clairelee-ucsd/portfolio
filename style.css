@@ -58,7 +58,7 @@ body {
       grid-column: 1 / -1;
     }
 
-    input {
+    input, textarea {
       font: inherit;
     }
 
@@ -131,4 +131,16 @@ body {
     color: oklch(53% 0.1 236);
   }
 
+}
+
+.color-scheme{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
+}
+
+select{
+  font-family: inherit;
 }
