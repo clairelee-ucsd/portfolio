@@ -42,7 +42,7 @@ body {
   nav a:hover {
     border-bottom: 0.4em solid var(--color-accent);
     padding-bottom: 0.1em;
-    background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+    background-color: color-mix(in oklch, var(--color-accent), canvas 50%);
   }
 
   form {
