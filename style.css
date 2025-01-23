@@ -1,5 +1,6 @@
 :root {
   --color-accent: oklch(85% 0.1 215);
+  color-scheme: dark;
 }
 
 body {
@@ -10,9 +11,11 @@ body {
   accent-color: var(--color-accent);
 
   nav {
+    --border-color: oklch(50% 10% 200 / 40%);
     display: flex;
     margin-bottom: 1.5em;
     border-bottom: 1px solid oklch(80% 3% 200);
+    border-bottom-color: var(--border-color);
 
     ul {
       display: contents;
