@@ -7,9 +7,9 @@ function $$(selector, context = document) {
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
-    { url: 'contact/', title: 'Contact'},
-    { url: 'resume/', title: 'Resume'},
-    { url: 'https://github.com/clairelee-ucsd', title: 'GitHub profile'}
+    { url: 'contact/', title: 'Contact' },
+    { url: 'resume/', title: 'Resume' },
+    { url: 'https://github.com/clairelee-ucsd', title: 'GitHub profile' }
   ];
 
 let nav = document.createElement('nav');
@@ -21,7 +21,9 @@ for (let p of pages) {
     let url = p.url;
     let title = p.title;
 
-    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
+    if (!ARE_WE_HOME && !url.startsWith('http')) {
+        url = '../' + url;
+      }
 
     nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
   }
