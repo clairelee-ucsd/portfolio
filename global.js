@@ -31,6 +31,16 @@ for (let p of pages) {
     let a = document.createElement('a');
     a.href = url;
     a.textContent = title;
+
+    a.classList.toggle(
+        'current',
+        a.host === location.host && a.pathname === location.pathname
+      );
+
+    if (a.host !== location.host) {
+        a.target = "_blank";
+    }
+
     nav.append(a);
   }
 
