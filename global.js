@@ -6,27 +6,29 @@ function $$(selector, context = document) {
 
 let pages = [
     { url: '', title: 'Home' },
-    { url: 'projects/', title: 'Projects' },
-    { url: 'contact/', title: 'Contact' },
-    { url: 'resume/', title: 'Resume' },
+    { url: 'portfolio/projects/', title: 'Projects' },
+    { url: 'portfolio/contact/', title: 'Contact' },
+    { url: 'portfolio/resume/', title: 'Resume' },
     { url: 'https://github.com/clairelee-ucsd', title: 'GitHub profile' }
   ];
 
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
-const BASE_URL = 'https://clairelee-ucsd.github.io/portfolio/';
+// const BASE_URL = 'https://clairelee-ucsd.github.io/portfolio/';
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 for (let p of pages) {
     let url = p.url;
     let title = p.title;
 
-    if (!ARE_WE_HOME && !url.startsWith('http')) {
-        url = BASE_URL + url + 'index.html';
-    } else if (url && !url.startsWith('http')) {
-        url = BASE_URL + url + 'index.html';
-    }
+    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
+
+    // if (!ARE_WE_HOME && !url.startsWith('http')) {
+    //     url = BASE_URL + url + 'index.html';
+    // } else if (url && !url.startsWith('http')) {
+    //     url = BASE_URL + url + 'index.html';
+    // }
 
     let a = document.createElement('a');
     a.href = url;
