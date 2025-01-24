@@ -82,7 +82,7 @@ form?.addEventListener('submit', function(event) {
     
     for (let [name, value] of data) {
         url += encodeURIComponent(name) + "=" + encodeURIComponent(value) + "&";
-        // console.log(name, value);
+        console.log(name, value);
     }
 
     url = url.slice(0, -1);
