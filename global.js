@@ -13,7 +13,7 @@ let pages = [
   ];
 
 const IS_PAGES = location.hostname === 'clairelee-ucsd.github.io';
-const BASE_PATH = IS_GITHUB_PAGES ? '/portfolio' : ''; 
+const BASE_PATH = IS_PAGES ? '/portfolio' : ''; 
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 let nav = document.createElement('nav');
