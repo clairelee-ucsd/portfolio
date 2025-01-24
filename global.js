@@ -6,23 +6,27 @@ function $$(selector, context = document) {
 
 let pages = [
     { url: '', title: 'Home' },
-    { url: 'portfolio/projects/', title: 'Projects' },
-    { url: 'portfolio/contact/', title: 'Contact' },
-    { url: 'portfolio/resume/', title: 'Resume' },
+    { url: 'projects/', title: 'Projects' },
+    { url: 'contact/', title: 'Contact' },
+    { url: 'resume/', title: 'Resume' },
     { url: 'https://github.com/clairelee-ucsd', title: 'GitHub profile' }
   ];
+
+const IS_PAGES = location.hostname === 'clairelee-ucsd.github.io';
+const BASE_PATH = IS_GITHUB_PAGES ? '/portfolio' : ''; 
+const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
 // const BASE_URL = 'https://clairelee-ucsd.github.io/portfolio/';
-const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 for (let p of pages) {
     let url = p.url;
     let title = p.title;
 
-    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
+
+    url = !ARE_WE_HOME && !url.startsWith('http') ? BASE_PATH + '/' + url : url;
 
     // if (!ARE_WE_HOME && !url.startsWith('http')) {
     //     url = BASE_URL + url + 'index.html';
@@ -34,14 +38,19 @@ for (let p of pages) {
     a.href = url;
     a.textContent = title;
 
-    a.classList.toggle(
-        'current',
-        a.host === location.host && a.pathname === location.pathname
-      );
-
-    if (a.host !== location.host) {
-        a.target = "_blank";
+    const currentPath = location.pathname.endsWith('/')? location.pathname: location.pathname + '/';
+    if (a.host === location.host && a.pathname === location.pathname) {
+      a.classList.add('current');
     }
+
+    // a.classList.toggle(
+    //     'current',
+    //     a.host === location.host && a.pathname === location.pathname
+    //   );
+
+    // if (!url.startsWith(BASE_PATH) && !url.startsWith('/')) {
+    //   a.target = '_blank';
+    // }
 
     nav.append(a);
   }
