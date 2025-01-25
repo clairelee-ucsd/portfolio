@@ -19,20 +19,12 @@ const ARE_WE_HOME = document.documentElement.classList.contains('home');
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
-// const BASE_URL = 'https://clairelee-ucsd.github.io/portfolio/';
-
 for (let p of pages) {
     let url = p.url;
     let title = p.title;
 
 
     url = !ARE_WE_HOME && !url.startsWith('http') ? BASE_PATH + '/' + url : url;
-
-    // if (!ARE_WE_HOME && !url.startsWith('http')) {
-    //     url = BASE_URL + url + 'index.html';
-    // } else if (url && !url.startsWith('http')) {
-    //     url = BASE_URL + url + 'index.html';
-    // }
 
     let a = document.createElement('a');
     a.href = url;
@@ -43,14 +35,9 @@ for (let p of pages) {
       a.classList.add('current');
     }
 
-    // a.classList.toggle(
-    //     'current',
-    //     a.host === location.host && a.pathname === location.pathname
-    //   );
-
-    // if (!url.startsWith(BASE_PATH) && !url.startsWith('/')) {
-    //   a.target = '_blank';
-    // }
+    if (!url.startsWith(BASE_PATH) && !url.startsWith('/')) {
+      a.target = '_blank';
+    }
 
     nav.append(a);
   }
