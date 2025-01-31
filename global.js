@@ -110,8 +110,12 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   containerElement.innerHTML = '';
 
   projects.forEach(project => {
-    const article = document.createElement('article');
+    const validHeading = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+    if (!validHeading.includes(headingLevel)){
+      headingLevel = 'h2';
+    }
 
+    const article = document.createElement('article');
     const heading = document.createElement(headingLevel);
     heading.textContent = project.title;
 
