@@ -90,7 +90,7 @@ body {
     article {
       display: grid;
       grid-template-rows: subgrid;
-      grid-row: span 3;
+      grid-row: span 4;
       gap: 1em;
 
       h2 {
@@ -143,4 +143,19 @@ body {
 
 select{
   font-family: inherit;
+}
+
+dl{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+dt{
+  font-size: 90%;
+  color: gray;
+  grid-row: 1;
+}
+
+dd{
+  grid-row: 2;
 }
