@@ -165,4 +165,35 @@ dd{
   margin-block: 2em;
   
   overflow: visible;
-  }
+}
+
+.swatch{
+  width: 20px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend{
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+.legend-item{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
