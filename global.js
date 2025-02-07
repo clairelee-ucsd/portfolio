@@ -106,6 +106,7 @@ export async function fetchJSON(url) {
   }
 }
 
+
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   containerElement.innerHTML = '';
 
@@ -119,15 +120,36 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     const heading = document.createElement(headingLevel);
     heading.textContent = project.title;
 
-    article.innerHTML = `
-    <${headingLevel}>${project.title}</${headingLevel}>
-    <h3>${project.year}</h3>
-    <img src="${project.image}" alt="${project.title}">
-    <p>${project.description}</p>`;
+    const projectDetails = document.createElement('div');
+    projectDetails.style.display = 'flex';
+    projectDetails.style.alignItems = 'center'; 
+    projectDetails.style.justifyContent = 'space-between'; 
+    projectDetails.style.flexWrap = 'wrap';
 
+ 
+    const description = document.createElement('p');
+    description.textContent = project.description;
+    description.style.marginRight = '20px'; 
+
+    const year = document.createElement('p');
+    year.textContent = project.year;
+    year.style.fontFamily = 'Baskerville, serif';
+    year.style.fontVariantNumeric = 'oldstyle-nums';
+    year.style.margin = '0';
+
+    projectDetails.appendChild(description);
+    projectDetails.appendChild(year);
+
+    article.innerHTML = `
+      <${headingLevel}>${project.title}</${headingLevel}>
+      <img src="${project.image}" alt="${project.title}">
+    `;
+
+    article.appendChild(projectDetails);
     containerElement.appendChild(article);
-  })
+  });
 }
+
 
 export async function fetchGitHubData(username) {
   return fetchJSON(`https://api.github.com/users/${username}`);
