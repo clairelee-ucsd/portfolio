@@ -62,7 +62,7 @@ function renderPieChart(projectsGiven) {
 }
 
 function updateDisplay() {
-    // fix this
+    // changed this code
     const filteredProjects = projects.filter(project => {
         const matchesSearch = Object.values(project)
             .join(' ')
