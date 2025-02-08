@@ -167,12 +167,33 @@ dd{
   overflow: visible;
 }
 
-.swatch{
-  width: 20px;
+span.swatch{
+  width: 15px;
   aspect-ratio: 1 / 1;
   background-color: var(--color);
   border-radius: 50%;
   display: inline-block;
+  align-items: center;
+  gap: 5px;
+}
+&:has(path:hover) {
+  path:not(:hover) {
+  opacity: 0.5;
+  }
+}
+
+path {
+  transition: 300ms;
+  cursor: pointer;
+  }
+
+
+.container{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  list-style: none;
 }
 
 .legend{
@@ -185,15 +206,26 @@ dd{
   flex: 1;
 }
 
-.legend-item{
+.legend li{
   display: flex;
   align-items: center;
   gap: 5px;
+  border-radius: 50%;
+  padding: 0.5em;
+
 }
 
-.container{
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  padding: 20px;
-}
+.selected {
+  --color: oklch(60% 45% 0) !important;
+  
+  &:is(path) {
+  fill: var(--color);
+  }
+  }
+
+  .searchBar{
+    padding: 8px;
+    display: grid;
+    width: 100%;
+    margin-bottom: 20px;
+  }
