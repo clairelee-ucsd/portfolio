@@ -1,15 +1,6 @@
 let data = [];
 
 async function loadData() {
-  data = await d3.csv('loc.csv');
-  console.log(data);
-}
-
-document.addEventListener('DOMContentLoaded', async () => {
-  await loadData();
-});
-
-async function loadData() {
     data = await d3.csv('loc.csv', (row) => ({
       ...row,
       line: Number(row.line), // or just +row.line
@@ -19,3 +10,7 @@ async function loadData() {
       datetime: new Date(row.datetime),
     }));
   }
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadData();
+});
