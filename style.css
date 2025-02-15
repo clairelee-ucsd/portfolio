@@ -236,22 +236,25 @@ path {
   font: inherit;
   padding: 10px;
   border: 1px solid #ccc;
+  
 }
 
 .stats dl {
   display: grid;
+  grid-template-columns: auto 1fr;
 }
 
 .stats dt {
   display: flex;
-  align-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  /* align-items: center; */
+
+  /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
 
 }
 
 .stats dd {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .gridlines line {

@@ -182,22 +182,35 @@ function createScatterPlot() {
         .attr('transform', `translate(${usableArea.left}, 0)`)
         .call(yAxis);
 
+    const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
+    const rScale = d3
+        .scaleSqrt()
+        .domain([minLines, maxLines])
+        .range([10, 30]); // adjust these values based on your experimentation
+    
+    const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+
     const dots = svg.append('g').attr('class', 'dots');
 
     dots
         .selectAll('circle')
-        .data(commits)
+        .data(sortedCommits)
         .join('circle')
         .attr('cx', (d) => xScale(d.datetime))
         .attr('cy', (d) => yScale(d.hourFrac))
-        .attr('r', 5)
+        .attr('r', (d) => rScale(d.totalLines))
         .attr('fill', 'steelblue')
-        .on('mouseenter', (event, commit) => {
+        .style('fill-opacity', 0.7) // Add transparency for overlapping dots
+        //added commit to mouseenter
+        .on('mouseenter', function (event, commit, d, i) {
+            d3.select(event.currentTarget).style('fill-opacity', 1); // Full opacity on hover
             updateTooltipContent(commit);
             updateTooltipVisibility(true);
-            updateTooltipPosition(event);
+            updateTooltipPosition(event);   
         })
-        .on('mouseleave', () => {
+        // added event to mouseleave
+        .on('mouseleave', function (event) {
+            d3.select(event.currentTarget).style('fill-opacity', 0.7); // Restore transparency
             updateTooltipContent({}); // Clear tooltip content
             updateTooltipVisibility(false);
         });
@@ -206,7 +219,7 @@ function createScatterPlot() {
 function updateTooltipVisibility(isVisible) {
     const tooltip = document.getElementById('commit-tooltip');
     tooltip.hidden = !isVisible;
-  }
+}
 
 function updateTooltipContent(commit) {
     const link = document.getElementById('commit-link');
@@ -214,24 +227,24 @@ function updateTooltipContent(commit) {
     const time = document.getElementById('commit-time');
     const author = document.getElementById('commit-author');
     const edited = document.getElementById('commit-lines');
-  
+
     if (Object.keys(commit).length === 0) return;
-  
+
     link.href = commit.url;
     link.textContent = commit.id;
     date.textContent = commit.datetime?.toLocaleString('en', {
-      dateStyle: 'full',
+        dateStyle: 'full',
     });
     time.textContent = commit.time;
     author.textContent = commit.author;
     edited.textContent = commit.lines.length;
-  }
+}
 
-  function updateTooltipPosition(event) {
+function updateTooltipPosition(event) {
     const tooltip = document.getElementById('commit-tooltip');
     tooltip.style.left = `${event.clientX}px`;
     tooltip.style.top = `${event.clientY}px`;
-  }
+}
 
 document.addEventListener('DOMContentLoaded', async () => {
     await loadData();
