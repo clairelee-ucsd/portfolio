@@ -58,7 +58,8 @@ body {
       grid-column: 1 / -1;
     }
 
-    input, textarea {
+    input,
+    textarea {
       font: inherit;
     }
 
@@ -133,7 +134,7 @@ body {
 
 }
 
-.color-scheme{
+.color-scheme {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -141,33 +142,33 @@ body {
   font-family: inherit;
 }
 
-select{
+select {
   font-family: inherit;
 }
 
-dl{
+dl {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-dt{
+dt {
   font-size: 90%;
   color: gray;
   grid-row: 1;
 }
 
-dd{
+dd {
   grid-row: 2;
 }
 
 #projects-pie-plot {
   max-width: 20em;
   margin-block: 2em;
-  
+
   overflow: visible;
 }
 
-span.swatch{
+span.swatch {
   width: 15px;
   aspect-ratio: 1 / 1;
   background-color: var(--color);
@@ -176,19 +177,20 @@ span.swatch{
   align-items: center;
   gap: 5px;
 }
+
 &:has(path:hover) {
   path:not(:hover) {
-  opacity: 0.5;
+    opacity: 0.5;
   }
 }
 
 path {
   transition: 300ms;
   cursor: pointer;
-  }
+}
 
 
-.container{
+.container {
   display: flex;
   align-items: center;
   gap: 30px;
@@ -196,7 +198,7 @@ path {
   list-style: none;
 }
 
-.legend{
+.legend {
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -206,7 +208,7 @@ path {
   flex: 1;
 }
 
-.legend li{
+.legend li {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -217,15 +219,49 @@ path {
 
 .selected {
   --color: oklch(60% 45% 0) !important;
-  
-  &:is(path) {
-  fill: var(--color);
-  }
-  }
 
-  .searchBar{
-    padding: 8px;
-    display: grid;
-    width: 100%;
-    margin-bottom: 20px;
+  &:is(path) {
+    fill: var(--color);
   }
+}
+
+.searchBar {
+  padding: 8px;
+  display: grid;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.stats {
+  font: inherit;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.stats dl {
+  display: grid;
+}
+
+.stats dt {
+  display: flex;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+
+}
+
+.stats dd {
+  display: flex;
+  align-items: center;
+}
+
+.gridlines line {
+  stroke: #d3d3d3;
+  /* Light gray color */
+  stroke-width: 1px;
+  opacity: 1;
+  z-index: 0;
+}
+
+.gridlines .domain {
+  stroke: #ffffff;
+}
