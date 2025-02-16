@@ -1,4 +1,6 @@
 let data = [];
+let xScale;
+let yScale;
 
 async function loadData() {
     data = await d3.csv('loc.csv', (row) => ({
@@ -131,13 +133,13 @@ function createScatterPlot() {
         .attr('viewBox', `0 0 ${width} ${height}`)
         .style('overflow', 'visible');
 
-    const xScale = d3
+    xScale = d3
         .scaleTime()
         .domain(d3.extent(commits, (d) => d.datetime))
         .range([0, width])
         .nice();
 
-    const yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
+    yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
 
     const usableArea = {
         top: margin.top,
@@ -187,7 +189,7 @@ function createScatterPlot() {
         .scaleSqrt()
         .domain([minLines, maxLines])
         .range([10, 30]); // adjust these values based on your experimentation
-    
+
     const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
 
     const dots = svg.append('g').attr('class', 'dots');
@@ -206,7 +208,7 @@ function createScatterPlot() {
             d3.select(event.currentTarget).style('fill-opacity', 1); // Full opacity on hover
             updateTooltipContent(commit);
             updateTooltipVisibility(true);
-            updateTooltipPosition(event);   
+            updateTooltipPosition(event);
         })
         // added event to mouseleave
         .on('mouseleave', function (event) {
@@ -214,6 +216,8 @@ function createScatterPlot() {
             updateTooltipContent({}); // Clear tooltip content
             updateTooltipVisibility(false);
         });
+
+    brushSelector();
 }
 
 function updateTooltipVisibility(isVisible) {
@@ -244,6 +248,92 @@ function updateTooltipPosition(event) {
     const tooltip = document.getElementById('commit-tooltip');
     tooltip.style.left = `${event.clientX}px`;
     tooltip.style.top = `${event.clientY}px`;
+}
+
+function brushSelector() {
+    const svg = document.querySelector('svg');
+    // Create brush
+    d3.select(svg).call(d3.brush());
+
+    // Raise dots and everything after overlay
+    d3.select(svg).selectAll('.dots, .overlay ~ *').raise();
+
+    // Update brush initialization to listen for events
+    d3.select(svg).call(d3.brush().on('start brush end', brushed));
+}
+
+let brushSelection = null;
+
+function isCommitSelected(commit) {
+    if (!brushSelection) {
+        return false;
+    }
+
+    const min = { x: brushSelection[0][0], y: brushSelection[0][1] };
+    const max = { x: brushSelection[1][0], y: brushSelection[1][1] };
+    const x = xScale(commit.date); const y = yScale(commit.hourFrac);
+
+    return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
+}
+
+function updateSelection() {
+    // Update visual state of dots based on selection
+    d3.selectAll('circle').classed('selected', (d) => isCommitSelected(d));
+}
+
+function updateSelectionCount() {
+    const selectedCommits = brushSelection
+        ? commits.filter(isCommitSelected)
+        : [];
+
+    const countElement = document.getElementById('selection-count');
+    countElement.textContent = `${selectedCommits.length || 'No'
+        } commits selected`;
+
+    return selectedCommits;
+}
+
+function updateLanguageBreakdown() {
+    const selectedCommits = brushSelection
+        ? commits.filter(isCommitSelected)
+        : [];
+    const container = document.getElementById('language-breakdown');
+
+    if (selectedCommits.length === 0) {
+        container.innerHTML = '';
+        return;
+    }
+    const requiredCommits = selectedCommits.length ? selectedCommits : commits;
+    const lines = requiredCommits.flatMap((d) => d.lines);
+
+    // Use d3.rollup to count lines per language
+    const breakdown = d3.rollup(
+        lines,
+        (v) => v.length,
+        (d) => d.type
+    );
+
+    // Update DOM with breakdown
+    container.innerHTML = '';
+
+    for (const [language, count] of breakdown) {
+        const proportion = count / lines.length;
+        const formatted = d3.format('.1~%')(proportion);
+
+        container.innerHTML += `
+            <dt>${language}</dt>
+            <dd>${count} lines (${formatted})</dd>
+        `;
+    }
+
+    return breakdown;
+}
+
+function brushed(event) {
+    brushSelection = event.selection;
+    updateSelectionCount();
+    updateSelection();
+    updateLanguageBreakdown();
 }
 
 document.addEventListener('DOMContentLoaded', async () => {

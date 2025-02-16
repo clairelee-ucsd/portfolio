@@ -236,25 +236,37 @@ path {
   font: inherit;
   padding: 10px;
   border: 1px solid #ccc;
-  
 }
 
-.stats dl {
+#stats dl {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
-.stats dt {
+#stats dt{
   display: flex;
-  /* align-items: center; */
-
-  /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
-
+  justify-content: center;
 }
 
-.stats dd {
+#stats dd{
   display: flex;
-  /* align-items: center; */
+}
+
+#language-breakdown.stats dt{
+  display: flex;
+  text-transform: uppercase;
+  justify-content: center;
+}
+
+#language-breakdown dd {
+  display: flex;
+  justify-content: center;
+}
+
+#language-breakdown.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  border: none;
 }
 
 .gridlines line {
@@ -283,7 +295,7 @@ dl.info {
   transition-property: opacity, visibility;
 }
 
-dl.info[hidden]:not(:hover, :focus-within){
+dl.info[hidden]:not(:hover, :focus-within) {
   opacity: 0;
   visibility: hidden;
 }
@@ -310,11 +322,30 @@ circle {
 }
 
 circle:hover {
-  transform: scale(1.5);  
+  transform: scale(1.5);
+}
+
+circle.selected {
+  fill: #ff6b6b;
 }
 
 .tooltip {
   position: fixed;
   top: 1em;
   left: 1em;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+    /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
 }

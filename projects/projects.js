@@ -68,9 +68,9 @@ function updateDisplay() {
             .join(' ')
             .toLowerCase()
             .includes(query.toLowerCase());
-            
+
         const matchesYear = !selectedYear || project.year === selectedYear;
-        
+
         return matchesSearch && matchesYear;
     });
 
@@ -79,7 +79,7 @@ function updateDisplay() {
     projectsTitle.textContent = `${filteredProjects.length} Project${filteredProjects.length !== 1 ? 's' : ''}`;
 
     // Update pie chart with search-filtered data
-    const searchFiltered = projects.filter(p => 
+    const searchFiltered = projects.filter(p =>
         Object.values(p).join(' ').toLowerCase().includes(query.toLowerCase())
     );
     renderPieChart(searchFiltered);
