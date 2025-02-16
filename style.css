@@ -246,6 +246,7 @@ path {
 #stats dt{
   display: flex;
   justify-content: center;
+  padding-bottom: 10px;
 }
 
 #stats dd{
