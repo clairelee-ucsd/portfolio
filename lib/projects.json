@@ -1,8 +1,8 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
+        "title": "Boston Bikewatching",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro corrupti qui excepturi sapiente, pariatur tempore voluptate corporis eum facere eos assumenda quasi dolorum sint consectetur velit. Quam soluta fuga obcaecati.",
+        "description": "This project involves building an immersive and interactive map visualization of bike traffic in the Boston area. The map will display Boston's roads, neighborhoods, and bike lanes using datasets from the city governments of Boston and Cambridge.",
         "year": "c. 2025"
     },
     {
