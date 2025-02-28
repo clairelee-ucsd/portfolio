@@ -1,7 +1,7 @@
 [
     {
         "title": "Boston Bikewatching",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "image": "../images/boston_bikewatching.jpg",
         "description": "This project involves building an immersive and interactive map visualization of bike traffic in the Boston area. The map will display Boston's roads, neighborhoods, and bike lanes using datasets from the city governments of Boston and Cambridge.",
         "year": "c. 2025"
     },
