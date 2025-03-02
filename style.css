@@ -243,17 +243,17 @@ path {
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
-#stats dt{
+#stats dt {
   display: flex;
   justify-content: center;
   padding-bottom: 10px;
 }
 
-#stats dd{
+#stats dd {
   display: flex;
 }
 
-#language-breakdown.stats dt{
+#language-breakdown.stats dt {
   display: flex;
   text-transform: uppercase;
   justify-content: center;
@@ -349,4 +349,9 @@ circle.selected {
   stroke-opacity: 0.7;
   stroke-dasharray: 5 3;
   animation: marching-ants 2s linear infinite;
+}
+
+#profile-pic {
+  max-width: 500px;
+  height: auto;
 }

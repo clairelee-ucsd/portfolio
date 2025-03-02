@@ -138,6 +138,12 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     description.textContent = project.description;
     description.style.marginRight = '20px';
 
+    const link = document.createElement('a');
+    link.href = project.link; 
+    link.textContent = 'View Project'; 
+    link.style.marginRight = '20px';
+    link.target = '_blank';
+
     const year = document.createElement('p');
     year.textContent = project.year;
     year.style.fontFamily = 'Baskerville, serif';
@@ -146,6 +152,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
     projectDetails.appendChild(image);
     projectDetails.appendChild(description);
+    projectDetails.appendChild(link);
     projectDetails.appendChild(year);
 
     article.innerHTML = `

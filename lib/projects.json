@@ -3,7 +3,8 @@
         "title": "Boston Bikewatching",
         "image": "../images/boston_bikewatching.jpg",
         "description": "This project involves building an immersive and interactive map visualization of bike traffic in the Boston area. The map will display Boston's roads, neighborhoods, and bike lanes using datasets from the city governments of Boston and Cambridge.",
-        "year": "c. 2025"
+        "year": "c. 2025",
+        "link": "https://clairelee-ucsd.github.io/bikewatching/"
     },
     {
         "title": "Voluptas commodi reprehenderit officiis.",
