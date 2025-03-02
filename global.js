@@ -118,21 +118,22 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     }
 
     const article = document.createElement('article');
+
     const heading = document.createElement(headingLevel);
     heading.textContent = project.title;
+
+    const projectDetails = document.createElement('div');
+    projectDetails.style.display = 'flex';
+    projectDetails.style.alignItems = 'flex-start'; 
+    projectDetails.style.justifyContent = 'space-between';
+    projectDetails.style.flexWrap = 'wrap';
 
     const image = document.createElement('img');
     image.src = project.image;
     image.alt = project.title;
-    image.style.maxWidth = '268.83px';
-    image.style.maxHeight = '183.48px';
-
-    const projectDetails = document.createElement('div');
-    projectDetails.style.display = 'flex';
-    projectDetails.style.alignItems = 'center';
-    projectDetails.style.justifyContent = 'space-between';
-    projectDetails.style.flexWrap = 'wrap';
-
+    image.style.width = '269px';
+    image.style.height = '134x';
+    image.style.objectFit = 'cover';
 
     const description = document.createElement('p');
     description.textContent = project.description;

@@ -7,10 +7,11 @@
         "link": "https://clairelee-ucsd.github.io/bikewatching/"
     },
     {
-        "title": "Voluptas commodi reprehenderit officiis.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Quis quae architecto quia tempora reprehenderit quos? Quos tempore magnam quisquam dolore a inventore qui modi reprehenderit aspernatur voluptate nesciunt omnis sit unde possimus, cumque eum. Suscipit, ea possimus! Saepe.",
-        "year": "c. 2024"
+        "title": "How Do Students' Stress Fluctuate Throughout an Exam Period?",
+        "image": "../images/how_do_students.jpg",
+        "description": "Our project visualizes how students' stress levels change throughout different exams using interactive data representation. By tracking four stress indicators (e.g., heart rate, electrodermal activity) across midterms and finals, we allow users to explore stress trends in an engaging way.",
+        "year": "c. 2025",
+        "link": "https://clairelee-ucsd.github.io/dsc106-project3/"
     },
     {
         "title": "Aliquid porro itaque deserunt!",

@@ -88,6 +88,8 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
     gap: 1em;
 
+    align-items: flex-start;
+
     article {
       display: grid;
       grid-template-rows: subgrid;
@@ -99,6 +101,14 @@ body {
       }
 
     }
+  }
+
+  .projects article > div {
+    /* This is the container with img, description, link, year */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; 
+    justify-content: space-between;
   }
 
   header.resume {
@@ -352,6 +362,6 @@ circle.selected {
 }
 
 #profile-pic {
-  max-width: 500px;
+  max-width: 400px;
   height: auto;
 }
