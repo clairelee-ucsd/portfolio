@@ -122,6 +122,7 @@ body {
   article.bs,
   article.intern,
   article.leadership,
+  article.awards,
   article.skills {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -137,7 +138,8 @@ body {
   #education h2,
   #work_experience h2,
   #leadership_experience h2,
-  #skills h2 {
+  #skills h2,
+  #awards h2 {
     font-size: 200%;
     color: oklch(53% 0.1 236);
   }
