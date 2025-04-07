@@ -103,11 +103,11 @@ body {
     }
   }
 
-  .projects article > div {
+  .projects article>div {
     /* This is the container with img, description, link, year */
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start; 
+    align-items: flex-start;
     justify-content: space-between;
   }
 
@@ -122,8 +122,7 @@ body {
   article.bs,
   article.intern,
   article.leadership,
-  article.awards,
-  article.skills {
+  article.awards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
@@ -132,6 +131,19 @@ body {
       display: grid;
       grid-template-columns: subgrid;
     }
+  }
+
+  article.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  article.skills ul {
+    font: inherit;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns per row */
+    gap: 0.5em;
   }
 
   header.resume h2,

@@ -1,5 +1,12 @@
 [
     {
+        "title": "Which Age Group is the Most Fit?",
+        "image": "../images/which_age_group.jpg",
+        "description": "This project uses interactive visualizations of treadmill exercise data to show how athletic performance and physiological efficiency vary by age. By tracking VO₂, heart rate, and breathing rate, users can explore how different age groups respond to intense effort—and rethink what it truly means to be fit.",
+        "year": "c. 2025",
+        "link": "https://seashello.github.io/dsc106-final-project/"
+    },
+    {
         "title": "Boston Bikewatching",
         "image": "../images/boston_bikewatching.jpg",
         "description": "This project involves building an immersive and interactive map visualization of bike traffic in the Boston area. The map will display Boston's roads, neighborhoods, and bike lanes using datasets from the city governments of Boston and Cambridge.",
@@ -9,68 +16,63 @@
     {
         "title": "How Do Students' Stress Fluctuate Throughout an Exam Period?",
         "image": "../images/how_do_students.jpg",
-        "description": "Our project visualizes how students' stress levels change throughout different exams using interactive data representation. By tracking four stress indicators (e.g., heart rate, electrodermal activity) across midterms and finals, we allow users to explore stress trends in an engaging way.",
+        "description": "This project visualizes how students' stress levels change throughout different exams using interactive data representation. By tracking four stress indicators (e.g., heart rate, electrodermal activity) across midterms and finals, we allow users to explore stress trends in an engaging way.",
         "year": "c. 2025",
         "link": "https://clairelee-ucsd.github.io/dsc106-project3/"
     },
     {
-        "title": "Aliquid porro itaque deserunt!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Maiores sed nam in minima debitis dolorum possimus deserunt magni itaque neque. Laborum labore consequuntur nihil mollitia tempore accusantium ducimus rerum explicabo sed? Aut sit saepe quibusdam nihil, expedita pariatur.",
-        "year": "c. 2024"
-    },
-    {
-        "title": "Consequuntur at consequatur voluptates.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Vel nesciunt odio voluptates error neque obcaecati placeat ad id amet reprehenderit consequatur enim repudiandae ex maxime deleniti rem quia ducimus fugiat autem, accusantium nam et dolorem soluta praesentium. Fugit!",
-        "year": "c. 2022"
+        "title": "An Analysis on the Relationship Between Recipe Complexity & Recipe Popularity",
+        "image": "../images/an_analysis_on.jpg",
+        "description": "This project explores how recipe complexity relates to popularity using interactive data from Food.com. Users can see how longer recipes tend to get more reviews, revealing how complexity may influence what people cook and engage with online. Through data visualization, hypothesis testing, and predictive modeling, the project invites users to consider how complexity influences what people cook and review online.",
+        "year": "c. 2024",
+        "link": "https://jex004.github.io/Recipe-Complexity-Report/"
     },
     {
         "title": "Sint voluptate ad alias?",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Rem ad enim voluptate illo cupiditate expedita ullam cumque nobis omnis ea commodi eligendi animi vel nulla voluptates quas suscipit ut, sint assumenda provident, fugit ipsa consequuntur. Quos, maiores quod.",
-        "year": "c. 2022"
+        "year": "c. wip"
     },
     {
         "title": "Quod provident atque nobis!",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Sequi adipisci doloremque asperiores, provident labore architecto assumenda optio dolorem incidunt illo ipsam. Asperiores similique illum unde, animi dolor voluptate. Eos accusamus deleniti praesentium fugiat obcaecati quasi ipsam quibusdam harum.",
-        "year": "c. 2021"
+        "year": "c. wip"
     },
     {
         "title": "Vitae quae neque corporis?",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Consequuntur perspiciatis quod doloremque nisi placeat non perferendis. Suscipit enim cum quos, voluptatem quasi maiores dolorum unde minima quae tenetur veniam nisi, id fugiat culpa itaque, adipisci placeat fugit aliquam!",
-        "year": "c. 2020"
+        "year": "c. wip"
     },
     {
         "title": "Quia hic provident laudantium?",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Quidem accusantium mollitia aperiam molestias, modi illum. Illum eaque commodi, fuga quidem hic quisquam, accusamus ad dignissimos et ipsa repudiandae officiis autem ipsum molestias vero explicabo, fugiat tempore quaerat quam.",
-        "year": "c. 2019"
+        "year": "c. wip"
     },
     {
         "title": "Aliquam facilis nostrum cumque?",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Autem molestiae nulla, sapiente quis impedit sit id! Deleniti suscipit adipisci accusantium quasi ab corrupti totam, necessitatibus at. Temporibus nobis earum nam. Fuga culpa, magni unde repellendus quia est consectetur!",
-        "year": "c. 2018"
+        "year": "c. wip"
     },
     {
         "title": "Reprehenderit quidem in natus?",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "At minima ex aspernatur? Distinctio harum consequuntur veniam aperiam earum, aliquam, quasi veritatis inventore repudiandae numquam labore vel consectetur voluptatem. Repudiandae magnam quas accusamus fuga molestiae atque dicta quia sequi!",
-        "year": "c. 2017"
+        "year": "c. wip"
     },
     {
         "title": "Maiores possimus consectetur minima.",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Iste accusantium doloribus voluptatibus velit id modi, quasi quas cum deserunt, minus quaerat mollitia, veniam corporis officiis fugiat tempore nulla blanditiis? Ut expedita voluptatibus iure sed quisquam obcaecati incidunt ducimus?",
-        "year": "c. 2017"
+        "year": "c. wip"
     },
     {
         "title": "Quisquam similique recusandae expedita.",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Reiciendis, assumenda repellendus. Nam soluta quasi animi officia! Ipsum dolorum dolores velit architecto cum, temporibus a itaque sapiente corrupti est natus. Officia dolor voluptatem, nam magni nostrum ipsa sapiente illum?",
-        "year": "c. 2016"
+        "year": "c. wip"
     }
 ]
