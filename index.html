@@ -1,29 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claire Lee: Personal site and portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Claire Lee's data science and cognitive science portfolio.">
+  <title>Claire Lee | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Claire Lee</h1>
-    <p>I am currently a junior at UCSD majoring in data science and minoring in cognitive science!</p>
-    <p>Please note that some pages are still a work in progress :)</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <img id="profile-pic" src="images/pic.jpg" alt="a photo of me.">
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Claire Lee home">Claire Lee</a>
 
-    <h2>My GitHub Stats</h2>
-    <div id="profile-stats">
+    <div class="header-right">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#socials">Socials</a>
+      </nav>
 
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle light and dark mode">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" hidden>
+          <path d="M20.4 15.5A8.5 8.5 0 0 1 8.5 3.6a8.5 8.5 0 1 0 11.9 11.9Z"></path>
+        </svg>
+      </button>
     </div>
+  </header>
 
-    <h2>Latest Projects</h2>
-    <div class="projects">
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="portrait-column">
+        <div class="portrait-frame">
+          <img id="profile-pic" src="images/pic.jpg" alt="Claire Lee">
+        </div>
+        <p class="portrait-caption">UC San Diego · Data Science</p>
+      </div>
 
-    </div>
+      <div class="hero-divider" aria-hidden="true"></div>
 
-    <script type="module" src="./global.js"></script>
-    <script src="./index.js" type="module" defer></script>
+      <div class="hero-copy">
+        <div class="intro-note">
+          <h1 id="hero-title">Hi, I’m Claire.</h1>
+          <p class="hero-blurb">
+            I’m a junior at UC San Diego studying Data Science with a minor in Cognitive Science.
+            I like working on projects that use data and technology to make information clearer,
+            more useful, and easier to understand.
+          </p>
+          <div class="hero-links" aria-label="Intro links">
+            <a href="#projects">Projects <span aria-hidden="true">↓</span></a>
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-intro">
+        <p class="section-label">01</p>
+        <div>
+          <h2 id="projects-title">Projects</h2>
+          <p>Selected work, experiments, and class projects.</p>
+        </div>
+      </div>
+
+      <div class="projects" aria-live="polite">
+        <p class="loading">Loading projects…</p>
+      </div>
+      <div class="project-controls" hidden>
+        <button class="project-toggle" type="button" aria-expanded="false">Show more</button>
+      </div>
+    </section>
+
+    <section class="section resume-section" id="resume" aria-labelledby="resume-title">
+      <div class="section-intro">
+        <p class="section-label">02</p>
+        <div>
+          <h2 id="resume-title">Resume</h2>
+          <p>View it here or open it in a new tab.</p>
+        </div>
+      </div>
+
+      <div class="resume-layout">
+        <aside class="resume-note">
+          <p class="resume-note-title">Claire Lee</p>
+          <p>Data Science · Cognitive Science</p>
+          <div class="resume-actions">
+            <a class="button button-primary" href="resume.pdf" target="_blank" rel="noopener noreferrer">Open PDF <span aria-hidden="true">↗</span></a>
+          </div>
+        </aside>
+
+        <div class="resume-paper">
+          <object data="resume.pdf#view=FitH" type="application/pdf" aria-label="Claire Lee resume PDF">
+            <div class="resume-fallback">
+              <p>Your browser can’t display the embedded PDF.</p>
+              <a class="button button-primary" href="resume.pdf" target="_blank" rel="noopener noreferrer">Open resume PDF</a>
+            </div>
+          </object>
+        </div>
+      </div>
+    </section>
+
+    <section class="section socials-section" id="socials" aria-labelledby="socials-title">
+      <div class="section-intro">
+        <p class="section-label">03</p>
+        <div>
+          <h2 id="socials-title">Socials</h2>
+          <p>A few places to find my work online.</p>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/clairelee-ucsd" target="_blank" rel="noopener noreferrer">
+          <span>GitHub</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://www.linkedin.com/in/claire-lee05" target="_blank" rel="noopener noreferrer">
+          <span>LinkedIn</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+       
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Claire Lee · UC San Diego</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script type="module" src="./index.js"></script>
 </body>
 </html>
