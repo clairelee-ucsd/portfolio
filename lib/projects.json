@@ -1,5 +1,12 @@
 [
     {
+        "title": "Terminal to Inbox",
+        "image": "../images/terminal_to_inbox.jpg",
+        "description": "Terminal to Inbox is a command-line tool that collects information from multiple sources, including calendars, to-do lists, due dates, weather, and news, and delivers a daily digest directly to your email inbox. Optionally, the tool can generate an AI-powered summary that highlights important events, deadlines, tasks, and priorities, allowing you to quickly understand your day without checking multiple applications.",
+        "year": "c. 2026",
+        "link": "https://github.com/clairelee05/terminal-to-inbox"
+    },
+    {
         "title": "Which Age Group is the Most Fit?",
         "image": "../images/which_age_group.jpg",
         "description": "This project uses interactive visualizations of treadmill exercise data to show how athletic performance and physiological efficiency vary by age. By tracking VO₂, heart rate, and breathing rate, users can explore how different age groups respond to intense effort—and rethink what it truly means to be fit.",
@@ -26,12 +33,6 @@
         "description": "This project explores how recipe complexity relates to popularity using interactive data from Food.com. Users can see how longer recipes tend to get more reviews, revealing how complexity may influence what people cook and engage with online. Through data visualization, hypothesis testing, and predictive modeling, the project invites users to consider how complexity influences what people cook and review online.",
         "year": "c. 2024",
         "link": "https://jex004.github.io/Recipe-Complexity-Report/"
-    },
-    {
-        "title": "Sint voluptate ad alias?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Rem ad enim voluptate illo cupiditate expedita ullam cumque nobis omnis ea commodi eligendi animi vel nulla voluptates quas suscipit ut, sint assumenda provident, fugit ipsa consequuntur. Quos, maiores quod.",
-        "year": "c. wip"
     },
     {
         "title": "Quod provident atque nobis!",
